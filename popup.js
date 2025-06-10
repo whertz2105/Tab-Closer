@@ -21,6 +21,12 @@ async function renderTabs() {
     checkbox.dataset.id = tab.id;
     checkbox.addEventListener('change', toggleProtection);
     li.appendChild(checkbox);
+    if (tab.favIconUrl) {
+      const img = document.createElement('img');
+      img.className = 'favicon';
+      img.src = tab.favIconUrl;
+      li.appendChild(img);
+    }
     li.append(' ' + (tab.title || tab.url));
     tabList.appendChild(li);
   }
@@ -55,7 +61,24 @@ async function renderDomains() {
   const { domainList = [] } = await chrome.storage.local.get(['domainList']);
   for (const domain of domainList) {
     const li = document.createElement('li');
-    li.textContent = domain;
+    const span = document.createElement('span');
+    span.textContent = domain;
+    const btn = document.createElement('button');
+    btn.textContent = '🗑️';
+    btn.className = 'trash';
+    btn.dataset.domain = domain;
+    btn.addEventListener('click', removeDomain);
+    li.appendChild(span);
+    li.appendChild(btn);
     list.appendChild(li);
   }
+}
+
+async function removeDomain(e) {
+  const domain = e.target.dataset.domain;
+  const { domainList = [] } = await chrome.storage.local.get(['domainList']);
+  const idx = domainList.indexOf(domain);
+  if (idx >= 0) domainList.splice(idx, 1);
+  await chrome.storage.local.set({ domainList });
+  renderDomains();
 }
