@@ -15,6 +15,8 @@ This browser extension closes all tabs except:
 2. Click the Tab Closer icon to open the popup.
 3. Check any tabs you want to protect from being closed. Each tab shows its favicon for easy identification.
 4. Add domain names (e.g. `google.com`) that should never be closed. Use the trashcan button next to a domain to remove it from the list.
+3. Check any tabs you want to protect from being closed.
+4. Add domain names (e.g. `google.com`) that should never be closed.
 5. Press **Close Unprotected Tabs** to close all other tabs.
 
 Protected tabs and domains are stored using `chrome.storage.local`.
