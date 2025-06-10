@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Closer",
+  "description": "Close all tabs except the active one and protected tabs.",
+  "version": "1.0",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Tab Closer",
+    "default_popup": "popup.html"
+  }
+}
