@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: Arial, sans-serif; min-width: 300px; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <h3>Protected Tabs</h3>
+  <ul id="tabs"></ul>
+
+  <h3>Protected Domains</h3>
+  <input type="text" id="domainInput" placeholder="example.com">
+  <button id="addDomain">Add</button>
+  <ul id="domainList"></ul>
+
+  <button id="closeTabs">Close Unprotected Tabs</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
