@@ -3,12 +3,24 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { font-family: Arial, sans-serif; min-width: 300px; }
+    body {
+      font-family: Arial, sans-serif;
+      min-width: 300px;
+      background-color: #b0b0b0; /* ashy gray */
+      color: #ffffff; /* turn default black text to white */
+    }
+
     ul { list-style: none; padding: 0; }
     li { margin-bottom: 5px; display: flex; align-items: center; }
     img.favicon { width: 16px; height: 16px; margin-right: 4px; }
     button.trash { margin-left: 4px; }
-    li { margin-bottom: 5px; }
+
+    input,
+    button {
+      background-color: #b0b0b0; /* previously white */
+      color: #ffffff; /* ensure text is white */
+      border: 1px solid #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -20,7 +32,10 @@
   <button id="addDomain">Add</button>
   <ul id="domainList"></ul>
 
+  <label><input type="checkbox" id="allWindows"> Affect all windows</label>
+  <br>
   <button id="closeTabs">Close Unprotected Tabs</button>
+  <button id="restoreTabs">Restore Last Closed Tabs</button>
 
   <script src="popup.js"></script>
 </body>
