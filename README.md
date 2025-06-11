@@ -1,3 +1,5 @@
+# Tab-Closer
+Closes all but the protected tabs in your browser
 # Tab Closer Extension
 
 This browser extension closes all tabs except:
@@ -15,8 +17,8 @@ This browser extension closes all tabs except:
 2. Click the Tab Closer icon to open the popup.
 3. Check any tabs you want to protect from being closed. Each tab shows its favicon for easy identification.
 4. Add domain names (e.g. `google.com`) that should never be closed. Use the trashcan button next to a domain to remove it from the list.
-3. Check any tabs you want to protect from being closed.
-4. Add domain names (e.g. `google.com`) that should never be closed.
-5. Press **Close Unprotected Tabs** to close all other tabs.
+5. By default, only tabs in the current window are affected. Check **Affect all windows** if you want to close unprotected tabs everywhere.
+6. Press **Close Unprotected Tabs** to close all other tabs.
+7. Use **Restore Last Closed Tabs** to reopen the most recently closed set of tabs.
 
 Protected tabs and domains are stored using `chrome.storage.local`.
