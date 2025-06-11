@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('addDomain').addEventListener('click', addDomain);
   document.getElementById('closeTabs').addEventListener('click', () => {
-    chrome.runtime.sendMessage({ action: 'closeTabs' });
+    const allWindows = document.getElementById('allWindows').checked;
+    chrome.runtime.sendMessage({ action: 'closeTabs', allWindows });
+  });
+  document.getElementById('restoreTabs').addEventListener('click', () => {
+    chrome.runtime.sendMessage({ action: 'restoreTabs' });
   });
 });
 
